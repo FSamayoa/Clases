@@ -209,3 +209,102 @@ let totalFibonachi = fibonachi.reduce(function(a,b){
 })
 
 console.log (totalFibonachi)
+
+
+
+//* Objetos 
+
+const personal = {
+    nombre:"Fernando", 
+    edad: 30, 
+    puesto: "director",
+    resumen: function (){
+        console.log ("El nombre del empleado es: " + this.nombre + ", y su puesto es de: " + this.puesto + ". El vive en: " + this.direccion.pais)
+    }, 
+    direccion: {
+        calle:"tulipan",
+        numero:"#5",
+        delegacion:"iztapalapa", 
+        telefono:5587746110,}}
+
+        // ver un elemento del objeto
+console.log (personal.direccion.telefono);
+console.log (personal["direccion"]["delegacion"])
+
+
+//añadir una propiedad al objeto
+
+personal.direccion.pais ="Mexico";
+personal ["direccion"]["municipio"] = "cdmx"
+console.log (personal["direccion"]["pais"]);
+console.log (personal.direccion.municipio);
+
+//asignar un nuevo valor a un objeto
+personal.nombre = "Fer"
+console.log (personal.nombre);
+
+//borrar una propiedad de un objeto
+delete personal.direccion.municipio;
+console.log (personal)
+
+// objet.keys y hasOwnProperty
+console.log (Object.keys(personal));  // El valo lo da como un array
+console.log (personal.direccion.hasOwnProperty("telefono"));
+
+
+//for in  el valor lo da como un elemento independiente
+
+for (let propiedades in personal){
+    console.log (propiedades)
+}
+
+
+// for each Da error no se por que
+
+// personal.forEach(function(value,key){
+//     console.log (key,value)
+// });
+
+
+//Contexto y this
+
+personal.resumen();
+
+
+//* Clases
+
+class escuela {
+    constructor (alumnos, profesores, padres, datos){
+        this.alumnos = alumnos;
+        this.profesores = profesores;
+        this.padres = padres;
+        this.datos = datos;
+        
+    }
+}
+
+console.log(escuela)
+
+const primero = new escuela()
+    primero.alumnos = 50;
+    primero.profesores = "Elena";
+    primero.padres = 50
+ 
+    console.log (primero)
+
+const segundo = new escuela()
+    segundo.alumnos = 43;
+    segundo.profesores = "Vivian";
+    segundo.padres = 40
+ 
+    console.log (segundo)
+
+    console.log ("El profesor de primero es: " + primero.profesores + " y el profesor de segundo es:" + segundo.profesores)
+
+
+escuela.prototype.saludar = function(){
+    console.log ("Hola yo soy el profesor: " + this.profesores + " y tengo " +this.alumnos + " Alumnos")
+}
+
+primero.saludar()
+segundo.saludar()
