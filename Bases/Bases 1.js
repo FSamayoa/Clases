@@ -308,3 +308,76 @@ escuela.prototype.saludar = function(){
 
 primero.saludar()
 segundo.saludar()
+
+
+function nombre (){
+    return ("Mi nombre es: ");
+}
+function telefono (){
+    return ("Mi telefono es: ");
+}
+
+function nombreTelefono (a,b){
+    return (a + b)
+}
+let res = nombreTelefono(nombre + telefono);
+
+
+// function hacerSaludo (lenguaje){
+//     if(lenguaje==="es"){
+//         return ()=>{console.log("Hola")}
+//     } else if (lenguaje === "in"){
+//         return ()=>{console.log("Hi")}
+//     }
+// }
+
+// var saludoingles = hacerSaludo("Hi")
+// var saludoespanol = hacerSaludo("Hola")
+
+
+//*Recursion
+
+function cuentaRegresiva(number) {
+      console.log(number);
+      let nuevoNumero = number - 1;
+      if (nuevoNumero === 0) {
+        return;
+      }
+      cuentaRegresiva(nuevoNumero);
+    }
+
+    cuentaRegresiva(10);
+
+// function printNumbers(callback) {
+//     for (var i = 0; i < 3; i++) {
+//       console.log(i);
+//     }
+  
+//     callback();
+//   }
+  
+//   function myCallback() {
+//     console.log("¡Todos los números se han impreso!");
+//   }
+  
+//   printNumbers(myCallback);
+
+
+
+  function cacheFunction(cb) {
+
+    let cache = {}
+    
+    return function(arg){
+      if(cache.hasOwnProperty(arg)){
+        return cache[arg];
+      }else{
+        let resultado =cb(arg);
+        cache[arg] = resultado;
+        return resultado
+      }
+    }
+    
+    //! Ternario  return cache.hasOwnProperty(arg) ? cache[arg]:(cache[arg]=cb(arg));
+    
+    }

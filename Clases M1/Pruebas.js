@@ -18,15 +18,15 @@
 
 //*BIND
 
-let persona ={nombre: "elena", apellido: "Chavez"}
+// let persona ={nombre: "elena", apellido: "Chavez"}
 
-let logNombre =function(){
-    console.log(this.nombre);
-}
+// let logNombre =function(){
+//     console.log(this.nombre);
+// }
 
-let logNombrePersona = logNombre.bind(persona);
+// let logNombrePersona = logNombre.bind(persona);
 
-logNombrePersona();
+// logNombrePersona();
 
 //*CALL
 
@@ -47,3 +47,6 @@ logNombrePersona();
 // }
 
 // logNombre.apply(persona,["hola "," como estas?"]);
+
+
+//* Recursividad
